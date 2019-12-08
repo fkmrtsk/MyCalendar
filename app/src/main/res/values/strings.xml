@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MyCalendar</string>
+    <string name="currentMonthView">TextView</string>
+    <string name="sunView">sun</string>
+    <string name="monView">mon</string>
+    <string name="tueView">tue</string>
+    <string name="wedView">wed</string>
+    <string name="thuView">thu</string>
+    <string name="friView">fri</string>
+    <string name="satView">sat</string>
+    <string name="sunFirstView"></string>
+    <string name="monFirstView"></string>
+    <string name="tueFirstView"></string>
+    <string name="wedFirstView"></string>
+    <string name="thuFirstView"></string>
+    <string name="friFirstView"></string>
+    <string name="satFirstView"></string>
+</resources>
