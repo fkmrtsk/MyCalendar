@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LeftFragment">
+
+    <TextView
+        android:id="@+id/currentMonthView"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:layout_width="409dp"
+        android:layout_height="710dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentMonthView">
+
+        <TableRow
+            android:id="@+id/weekView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/sunView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/sunView" />
+
+            <TextView
+                android:id="@+id/monView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/monView" />
+
+            <TextView
+                android:id="@+id/tueView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/tueView" />
+
+            <TextView
+                android:id="@+id/wedView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/wedView" />
+
+            <TextView
+                android:id="@+id/thuView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/thuView" />
+
+            <TextView
+                android:id="@+id/friView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/friView" />
+
+            <TextView
+                android:id="@+id/satView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/satView" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/firstWeekView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/sunFirstView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/sunFirstView" />
+
+            <TextView
+                android:id="@+id/monFirstView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/monFirstView" />
+
+            <TextView
+                android:id="@+id/tueFirstView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/tueFirstView" />
+
+            <TextView
+                android:id="@+id/wedFirstView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/wedFirstView" />
+
+            <TextView
+                android:id="@+id/thuFirstView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/thuFirstView" />
+
+            <TextView
+                android:id="@+id/friFirstView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/friFirstView" />
+
+            <TextView
+                android:id="@+id/satFirstView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/satFirstView" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/secondWeekView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/sunSecondView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/sunFirstView" />
+
+            <TextView
+                android:id="@+id/monSecondView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/monFirstView" />
+
+            <TextView
+                android:id="@+id/tueSecondView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/tueFirstView" />
+
+            <TextView
+                android:id="@+id/wedSecondView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/wedFirstView" />
+
+            <TextView
+                android:id="@+id/thuSecondView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/thuFirstView" />
+
+            <TextView
+                android:id="@+id/friSecondView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/friFirstView" />
+
+            <TextView
+                android:id="@+id/satSecondView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/satFirstView" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/thirdWeekView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/sunThirdView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/sunFirstView" />
+
+            <TextView
+                android:id="@+id/monThirdView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/monFirstView" />
+
+            <TextView
+                android:id="@+id/tueThirdView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/tueFirstView" />
+
+            <TextView
+                android:id="@+id/wedThirdView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/wedFirstView" />
+
+            <TextView
+                android:id="@+id/thuThirdView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/thuFirstView" />
+
+            <TextView
+                android:id="@+id/friThirdView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/friFirstView" />
+
+            <TextView
+                android:id="@+id/satThirdView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/satFirstView" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fourthWeekView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/sunFourthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/sunFirstView" />
+
+            <TextView
+                android:id="@+id/monFourthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/monFirstView" />
+
+            <TextView
+                android:id="@+id/tueFourthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/tueFirstView" />
+
+            <TextView
+                android:id="@+id/wedFourthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/wedFirstView" />
+
+            <TextView
+                android:id="@+id/thuFourthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/thuFirstView" />
+
+            <TextView
+                android:id="@+id/friFourthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/friFirstView" />
+
+            <TextView
+                android:id="@+id/satFourthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/satFirstView" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fifthWeekView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/sunFifthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/sunFirstView" />
+
+            <TextView
+                android:id="@+id/monFifthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/monFirstView" />
+
+            <TextView
+                android:id="@+id/tueFifthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/tueFirstView" />
+
+            <TextView
+                android:id="@+id/wedFifthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/wedFirstView" />
+
+            <TextView
+                android:id="@+id/thuFifthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/thuFirstView" />
+
+            <TextView
+                android:id="@+id/friFifthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/friFirstView" />
+
+            <TextView
+                android:id="@+id/satFifthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/satFirstView" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/sixthWeekView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/sunSixthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/sunFirstView" />
+
+            <TextView
+                android:id="@+id/monSixthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/monFirstView" />
+
+            <TextView
+                android:id="@+id/tueSixthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/tueFirstView" />
+
+            <TextView
+                android:id="@+id/wedSixthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/wedFirstView" />
+
+            <TextView
+                android:id="@+id/thuSixthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/thuFirstView" />
+
+            <TextView
+                android:id="@+id/friSixthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/friFirstView" />
+
+            <TextView
+                android:id="@+id/satSixthView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:text="@string/satFirstView" />
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
