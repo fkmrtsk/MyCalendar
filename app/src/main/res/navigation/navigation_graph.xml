@@ -11,8 +11,11 @@
                 android:label="fragment_current"
                 tools:layout="@layout/fragment_current" >
                 <action
-                    android:id="@+id/action_first_to_second"
+                    android:id="@+id/action_current_to_left"
                     app:destination="@id/leftFragment" />
+                <action
+                    android:id="@+id/action_current_to_right"
+                    app:destination="@id/rightFragment" />
             </fragment>
 
             <fragment
