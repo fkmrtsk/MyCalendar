@@ -49,27 +49,6 @@ class CurrentFragment : Fragment() {
         calendar.set(year, month + 1, 0)
         val currentMonthLastDay: Int = calendar.get(Calendar.DATE)
 
-        var count: Int = 0
-        for (i in firstDayWeek - 2 downTo 0) {
-            dayView[count] = beforeMonthLastDay - i
-            count++
-        }
-
-        for (i in 1 .. currentMonthLastDay) {
-            dayView[count] = i
-            count++
-        }
-
-        var nextMonthDay: Int = 1
-        for (i in count..41) {
-            dayView[count] = nextMonthDay
-            nextMonthDay++
-            count++
-        }
-
-        // 現在の月を表示
-        currentMonthView.text = (month + 1).toString() + "月"
-
         // ViewのIDを配列に格納
         var dayTexiView = arrayOf(
             sunFirstView, monFirstView, tueFirstView, wedFirstView, thuFirstView, friFirstView,satFirstView,
@@ -79,6 +58,33 @@ class CurrentFragment : Fragment() {
             sunFifthView, monFifthView, tueFifthView, wedFifthView, thuFifthView, friFifthView,satFifthView,
             sunSixthView, monSixthView, tueSixthView, wedSixthView, thuSixthView, friSixthView,satSixthView
         )
+
+        var count: Int = 0
+        // 表示される前月の日付を格納
+        for (i in firstDayWeek - 2 downTo 0) {
+            dayView[count] = beforeMonthLastDay - i
+            dayTexiView[count].setBackgroundColor(Color.parseColor("#dcdcdc"))
+            count++
+        }
+
+        // カレント月の日付を格納
+        for (i in 1 .. currentMonthLastDay) {
+            dayView[count] = i
+            count++
+        }
+
+        // 表示される次月の日付を格納
+        var nextMonthDay: Int = 1
+        for (i in count..41) {
+            dayView[count] = nextMonthDay
+            dayTexiView[count].setBackgroundColor(Color.parseColor("#dcdcdc"))
+            nextMonthDay++
+            count++
+        }
+
+        // 現在の月を表示
+        currentMonthView.text = (month + 1).toString() + "月"
+
         for ((index, value) in dayView.withIndex()) {
             dayTexiView[index].text = value.toString()
             if (index == 0 ||
