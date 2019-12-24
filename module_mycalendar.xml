@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_mycalendar" default="compile.module.mycalendar">
+  <dirname property="module.mycalendar.basedir" file="${ant.file.module_mycalendar}"/>
+  
+  <property name="module.jdk.home.mycalendar" value="${jdk.home.1.8}"/>
+  <property name="module.jdk.bin.mycalendar" value="${jdk.bin.1.8}"/>
+  <property name="module.jdk.classpath.mycalendar" value="jdk.classpath.1.8"/>
+  
+  <property name="compiler.args.mycalendar" value="-encoding UTF-8 -source 7 -target 7 ${compiler.args}"/>
+  
+  <property name="mycalendar.output.dir" value="${module.mycalendar.basedir}/build/classes/production/MyCalendar"/>
+  <property name="mycalendar.testoutput.dir" value="${module.mycalendar.basedir}/build/classes/test/MyCalendar"/>
+  
+  <path id="mycalendar.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="mycalendar.module.production.classpath">
+    <path refid="${module.jdk.classpath.mycalendar}"/>
+  </path>
+  
+  <path id="mycalendar.runtime.production.module.classpath">
+    <pathelement location="${mycalendar.output.dir}"/>
+  </path>
+  
+  <path id="mycalendar.module.classpath">
+    <path refid="${module.jdk.classpath.mycalendar}"/>
+    <pathelement location="${mycalendar.output.dir}"/>
+  </path>
+  
+  <path id="mycalendar.runtime.module.classpath">
+    <pathelement location="${mycalendar.testoutput.dir}"/>
+    <pathelement location="${mycalendar.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.mycalendar">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.mycalendar">
+    <patternset refid="excluded.from.module.mycalendar"/>
+  </patternset>
+  
+  
+  <target name="compile.module.mycalendar" depends="compile.module.mycalendar.production,compile.module.mycalendar.tests" description="Compile module MyCalendar"/>
+  
+  <target name="compile.module.mycalendar.production" depends="register.custom.compilers" description="Compile module MyCalendar; production classes"/>
+  
+  <target name="compile.module.mycalendar.tests" depends="register.custom.compilers,compile.module.mycalendar.production" description="compile module MyCalendar; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.mycalendar" description="cleanup module">
+    <delete dir="${mycalendar.output.dir}"/>
+    <delete dir="${mycalendar.testoutput.dir}"/>
+  </target>
+</project>
