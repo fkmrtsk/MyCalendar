@@ -70,7 +70,7 @@ class CurrentFragment : Fragment() {
         }
 
         // 現在の月を表示
-        currentMonthView.text = (month + 1).toString() + "月"
+        currentMonthView.text = year.toString() + "年" + (month + 1).toString() + "月"
 
         // ViewのIDを配列に格納
         var dayTexiView = arrayOf(

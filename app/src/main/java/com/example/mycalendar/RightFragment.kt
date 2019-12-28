@@ -82,7 +82,7 @@ class RightFragment : Fragment() {
 
         // 現在の月を表示
         var dispMonth = month + 1
-        currentMonthView.text = dispMonth.toString() + "月"
+        currentMonthView.text = year.toString() + "年" + dispMonth.toString() + "月"
 
         // ViewのIDを配列に格納
         var dayTexiView = arrayOf(

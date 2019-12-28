@@ -40,7 +40,7 @@ class LeftFragment : Fragment() {
             month = tmpMonth
         }
         var day: Int   = calendar.get(Calendar.DATE)
-        var dayView    = arrayOfNulls<Int>(42)
+        var dayView = arrayOfNulls<Int>(42)
 
         view.previousButton.setOnClickListener {
             val action = LeftFragmentDirections.actionCurrentToLeft(year, month)
@@ -82,7 +82,7 @@ class LeftFragment : Fragment() {
 
         // 現在の月を表示
         var dispMonth = month + 1
-        currentMonthView.text = dispMonth.toString() + "月"
+        currentMonthView.text = year.toString() + "年" + dispMonth.toString() + "月"
 
         // ViewのIDを配列に格納
         var dayTexiView = arrayOf(
