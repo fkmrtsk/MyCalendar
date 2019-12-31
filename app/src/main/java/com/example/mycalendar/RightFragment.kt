@@ -7,16 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.fragment_right.*
 import kotlinx.android.synthetic.main.fragment_right.view.*
 import java.util.*
 
 class RightFragment : Fragment() {
+    private val args: RightFragmentArgs by navArgs()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_right, container, false)
-        view.previousButton.setOnClickListener {
-            findNavController().navigate(R.id.action_third_to_first)
-        }
         return view
     }
 
@@ -28,12 +28,28 @@ class RightFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         // カレンダー用のパッケージ
         val calendar   = Calendar.getInstance()
-        var year: Int  = calendar.get(Calendar.YEAR)
-        var month: Int = calendar.get(Calendar.MONTH) + 1
+        val tmpYear: Int  = args.year
+        val tmpMonth: Int = args.month + 1
+        var year: Int
+        var month: Int
+        if (tmpMonth >= 12) {
+            year  = tmpYear + 1
+            month = tmpMonth - 12
+        } else {
+            year  = tmpYear
+            month = tmpMonth
+        }
         var day: Int   = calendar.get(Calendar.DATE)
         var dayView    = arrayOfNulls<Int>(42)
 
-
+        view.previousButton.setOnClickListener {
+            val action = RightFragmentDirections.actionCurrentToLeft(year, month)
+            findNavController().navigate(action)
+        }
+        view.nextButton.setOnClickListener {
+            val action = RightFragmentDirections.actionCurrentToRight(year, month)
+            findNavController().navigate(action)
+        }
         // 今月の初日の曜日を取得
         calendar.set(year, month, 1)
         val firstDayWeek: Int = calendar.get(Calendar.DAY_OF_WEEK)
@@ -66,10 +82,7 @@ class RightFragment : Fragment() {
 
         // 現在の月を表示
         var dispMonth = month + 1
-        if (dispMonth > 12) {
-            dispMonth -= 12
-        }
-        currentMonthView.text = dispMonth.toString() + "月"
+        currentMonthView.text = year.toString() + "年" + dispMonth.toString() + "月"
 
         // ViewのIDを配列に格納
         var dayTexiView = arrayOf(

@@ -24,8 +24,17 @@
                 android:label="fragment_left"
                 tools:layout="@layout/fragment_left" >
                 <action
-                    android:id="@+id/action_second_to_third"
+                    android:id="@+id/action_current_to_left"
+                    app:destination="@id/leftFragment" />
+                <action
+                    android:id="@+id/action_current_to_right"
                     app:destination="@id/rightFragment" />
+                <argument
+                    android:name="year"
+                    app:argType="integer"/>
+                <argument
+                    android:name="month"
+                    app:argType="integer"/>
             </fragment>
 
             <fragment
@@ -34,8 +43,17 @@
                 android:label="fragment_right"
                 tools:layout="@layout/fragment_right">
                 <action
-                    android:id="@+id/action_third_to_first"
-                    app:destination="@id/currentFragment" />
+                    android:id="@+id/action_current_to_left"
+                    app:destination="@id/leftFragment" />
+                <action
+                    android:id="@+id/action_current_to_right"
+                    app:destination="@id/rightFragment" />
+                <argument
+                    android:name="year"
+                    app:argType="integer"/>
+                <argument
+                    android:name="month"
+                    app:argType="integer"/>
             </fragment>
 
 </navigation>

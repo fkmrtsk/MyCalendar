@@ -14,12 +14,6 @@ import java.util.*
 class CurrentFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_current, container, false)
-        view.previousButton.setOnClickListener {
-            findNavController().navigate(R.id.action_current_to_left)
-        }
-        view.nextButton.setOnClickListener {
-            findNavController().navigate(R.id.action_current_to_right)
-        }
         return view
     }
 
@@ -32,10 +26,18 @@ class CurrentFragment : Fragment() {
         // カレンダー用のパッケージ
         val calendar   = Calendar.getInstance()
         var year: Int  = calendar.get(Calendar.YEAR)
-        var month: Int = calendar.get(Calendar.MONTH)
+        var month: Int = calendar.get(Calendar.MONTH) // 該当の月 - 1の値が渡される
         var day: Int   = calendar.get(Calendar.DATE)
         var dayView    = arrayOfNulls<Int>(42)
 
+        view.previousButton.setOnClickListener {
+            val action = CurrentFragmentDirections.actionCurrentToLeft(year, month)
+            findNavController().navigate(action)
+        }
+        view.nextButton.setOnClickListener {
+            val action = CurrentFragmentDirections.actionCurrentToRight(year, month)
+            findNavController().navigate(action)
+        }
 
         // 今月の初日の曜日を取得
         calendar.set(year, month, 1)
@@ -68,7 +70,7 @@ class CurrentFragment : Fragment() {
         }
 
         // 現在の月を表示
-        currentMonthView.text = (month + 1).toString() + "月"
+        currentMonthView.text = year.toString() + "年" + (month + 1).toString() + "月"
 
         // ViewのIDを配列に格納
         var dayTexiView = arrayOf(
