@@ -28,8 +28,8 @@ class LeftFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         // カレンダー用のパッケージ
         val calendar   = Calendar.getInstance()
-        val tmpYear: Int  = args.year
-        val tmpMonth: Int = args.month - 1
+        val tmpYear: Int  = 2019
+        val tmpMonth: Int = 12
         var year: Int
         var month: Int
         if (tmpMonth < 0) {

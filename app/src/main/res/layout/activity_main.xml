@@ -13,5 +13,9 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:navGraph="@navigation/navigation_graph"
         app:defaultNavHost="true" />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
