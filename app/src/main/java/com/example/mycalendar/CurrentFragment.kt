@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_current.*
 import kotlinx.android.synthetic.main.fragment_current.view.*
 import java.util.*
 
-class CurrentFragment : Fragment() {
+class CurrentFragment(var year: Int, var month: Int) : Fragment() {
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_current, container, false)
         return view
@@ -24,19 +24,14 @@ class CurrentFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // カレンダー用のパッケージ
-        val calendar   = Calendar.getInstance()
-        var year: Int  = calendar.get(Calendar.YEAR)
-        var month: Int = calendar.get(Calendar.MONTH) // 該当の月 - 1の値が渡される
-        var day: Int   = calendar.get(Calendar.DATE)
-        var dayView    = arrayOfNulls<Int>(42)
-
-        view.previousButton.setOnClickListener {
-            val action = CurrentFragmentDirections.actionCurrentToLeft(year, month)
-            findNavController().navigate(action)
-        }
-        view.nextButton.setOnClickListener {
-            val action = CurrentFragmentDirections.actionCurrentToRight(year, month)
-            findNavController().navigate(action)
+        val calendar = Calendar.getInstance()
+        var dayView = arrayOfNulls<Int>(42)
+        if (month < 0) {
+            year  = year - 1
+            month = month + 12
+        } else if(month >= 12) {
+            year  = year + 1
+            month = month - 12
         }
 
         // 今月の初日の曜日を取得

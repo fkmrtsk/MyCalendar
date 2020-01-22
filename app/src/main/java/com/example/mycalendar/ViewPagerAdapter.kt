@@ -2,23 +2,17 @@ package com.example.mycalendar
 
 import android.util.Log
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
-import androidx.fragment.app.FragmentTransaction
+import androidx.fragment.app.*
 import androidx.viewpager.widget.ViewPager
 
 
-class ViewPagerAdapter(val fragmentManager: FragmentManager): FragmentPagerAdapter(fragmentManager) {
+class ViewPagerAdapter(val fragmentManager: FragmentManager): FragmentStatePagerAdapter(fragmentManager) {
     var mIndexes = ArrayList<Int>()
+    var year: Int = 0
+    var month: Int = 0
 
     override fun getItem(position: Int): Fragment {
-        Log.v("getItem", position.toString())
-        return when (position) {
-            0 -> LeftFragment()
-            1 -> CurrentFragment()
-            else -> RightFragment()
-        }
+        return CurrentFragment(year, month)
     }
 
     // スライドできる画面の総数を設定
@@ -32,6 +26,19 @@ class ViewPagerAdapter(val fragmentManager: FragmentManager): FragmentPagerAdapt
 
     fun getAll(): ArrayList<Int> {
         return mIndexes
+    }
+
+    fun setDate(tmpYear: Int, tmpMonth: Int) {
+        year = tmpYear
+        month = tmpMonth
+    }
+
+    fun getYearData(): Int {
+        return year
+    }
+
+    fun getMonthData(): Int {
+        return month
     }
 
 //    fun destroyAllItem(viewPager: ViewPager) {

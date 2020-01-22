@@ -521,26 +521,5 @@
                     android:text="@string/satFirstView"/>
             </TableRow>
         </TableLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="47dp"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints"
-            android:layout_below="@+id/tableLayout2">
-            <Button
-                android:id="@+id/previousButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="＜"
-                android:textSize="18sp"
-                android:layout_weight="1"/>
-            <Button
-                android:id="@+id/nextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="＞"
-                android:textSize="18sp"
-                android:layout_weight="1"/>
-        </LinearLayout>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
